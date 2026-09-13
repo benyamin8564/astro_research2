@@ -15,7 +15,26 @@ class MainActivity : AppCompatActivity() {
         val name=findViewById<EditText>(R.id.name); val mother=findViewById<EditText>(R.id.mother); val date=findViewById<EditText>(R.id.date); val time=findViewById<EditText>(R.id.time); val city=findViewById<EditText>(R.id.city); val country=findViewById<EditText>(R.id.country); val tz=findViewById<EditText>(R.id.tz); val lat=findViewById<EditText>(R.id.lat); val lon=findViewById<EditText>(R.id.lon); val job=findViewById<EditText>(R.id.job); val rel=findViewById<EditText>(R.id.relationship); val horizon=findViewById<EditText>(R.id.horizon); val risk=findViewById<EditText>(R.id.risk); val question=findViewById<EditText>(R.id.question); val result=findViewById<TextView>(R.id.result)
         findViewById<Button>(R.id.analyze).setOnClickListener {
             try {
-                val d=java.time.LocalDate.parse(date.text.toString().trim()); val t=java.time.LocalTime.parse(time.text.toString().trim()); val dt=LocalDateTime.of(d,t)
+                val dateInput = date.text.toString().trim().replace("/", "-")
+val timeInput = time.text.toString().trim().replace(".", ":")
+
+val dateDigits = dateInput.filter { it.isDigit() }
+val normalizedDate = when {
+    dateDigits.length == 8 ->
+        "${dateDigits.substring(0, 4)}-${dateDigits.substring(4, 6)}-${dateDigits.substring(6, 8)}"
+    else -> dateInput
+}
+
+val timeDigits = timeInput.filter { it.isDigit() }
+val normalizedTime = when {
+    timeDigits.length == 4 ->
+        "${timeDigits.substring(0, 2)}:${timeDigits.substring(2, 4)}"
+    else -> timeInput
+}
+
+val d = java.time.LocalDate.parse(normalizedDate)
+val t = java.time.LocalTime.parse(normalizedTime)
+val dt = LocalDateTime.of(d, t)
                 val tzv=tz.text.toString().trim().replace(",",".").toDouble(); val la=lat.text.toString().trim().replace(",",".").toDoubleOrNull(); val lo=lon.text.toString().trim().replace(",",".").toDoubleOrNull()
                 if(la==null||lo==null) { result.text="برای محاسبه دقیق خانه‌ها، عرض و طول جغرافیایی محل تولد را وارد کنید.\n\nمثال تهران: 35.69 و 51.39"; return@setOnClickListener }
                 val chart=AstroCalculator.calculate(dt,tzv,la,lo,true)
