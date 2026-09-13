@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent">
+<LinearLayout android:orientation="vertical" android:padding="18dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+<TextView android:text="Astro Research" android:textSize="28sp" android:textStyle="bold" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+<TextView android:text="تحلیل پژوهشی نمودار تولد — غربی/تروپیکال" android:textSize="16sp" android:layout_marginBottom="12dp" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+<com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="نام و نام خانوادگی">
+<com.google.android.material.textfield.TextInputEditText android:id="@+id/name" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+</com.google.android.material.textfield.TextInputLayout>
+<com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="نام مادر (اختیاری؛ در محاسبه استفاده نمی‌شود)">
+<com.google.android.material.textfield.TextInputEditText android:id="@+id/mother" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+</com.google.android.material.textfield.TextInputLayout>
+<com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="تاریخ تولد — YYYY-MM-DD">
+<com.google.android.material.textfield.TextInputEditText android:id="@+id/date" android:inputType="date" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+</com.google.android.material.textfield.TextInputLayout>
+<com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="ساعت دقیق — HH:MM">
+<com.google.android.material.textfield.TextInputEditText android:id="@+id/time" android:inputType="time" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+</com.google.android.material.textfield.TextInputLayout>
+<com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="شهر تولد">
+<com.google.android.material.textfield.TextInputEditText android:id="@+id/city" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+</com.google.android.material.textfield.TextInputLayout>
+<com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="کشور تولد">
+<com.google.android.material.textfield.TextInputEditText android:id="@+id/country" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+</com.google.android.material.textfield.TextInputLayout>
+<com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="منطقه زمانی محل تولد، مثل +03:30">
+<com.google.android.material.textfield.TextInputEditText android:id="@+id/tz" android:inputType="numberSigned|numberDecimal" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+</com.google.android.material.textfield.TextInputLayout>
+<com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="عرض جغرافیایی (اختیاری، مثل 35.69)">
+<com.google.android.material.textfield.TextInputEditText android:id="@+id/lat" android:inputType="numberSigned|numberDecimal" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+</com.google.android.material.textfield.TextInputLayout>
+<com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="طول جغرافیایی (اختیاری، مثل 51.39)">
+<com.google.android.material.textfield.TextInputEditText android:id="@+id/lon" android:inputType="numberSigned|numberDecimal" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+</com.google.android.material.textfield.TextInputLayout>
+
+<TextView android:text="اطلاعات تکمیلی" android:textStyle="bold" android:textSize="19sp" android:layout_marginTop="12dp" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+<com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="شغل فعلی / حوزه کاری (اختیاری)"><com.google.android.material.textfield.TextInputEditText android:id="@+id/job" android:layout_width="match_parent" android:layout_height="wrap_content"/></com.google.android.material.textfield.TextInputLayout>
+<com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="وضعیت رابطه (اختیاری)"><com.google.android.material.textfield.TextInputEditText android:id="@+id/relationship" android:layout_width="match_parent" android:layout_height="wrap_content"/></com.google.android.material.textfield.TextInputLayout>
+<com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="افق سرمایه‌گذاری، مثلاً کوتاه/میان/بلندمدت"><com.google.android.material.textfield.TextInputEditText android:id="@+id/horizon" android:layout_width="match_parent" android:layout_height="wrap_content"/></com.google.android.material.textfield.TextInputLayout>
+<com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="تحمل ریسک مالی، 1 تا 10"><com.google.android.material.textfield.TextInputEditText android:id="@+id/risk" android:inputType="number" android:layout_width="match_parent" android:layout_height="wrap_content"/></com.google.android.material.textfield.TextInputLayout>
+<com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="مهم‌ترین سؤال یا هدف شما"><com.google.android.material.textfield.TextInputEditText android:id="@+id/question" android:layout_width="match_parent" android:layout_height="wrap_content"/></com.google.android.material.textfield.TextInputLayout>
+
+<Button android:id="@+id/analyze" android:text="ساخت و تحلیل نمودار" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp"/>
+<Button android:id="@+id/sources" android:text="منابع و روش‌شناسی" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+<TextView android:id="@+id/result" android:textIsSelectable="true" android:textSize="15sp" android:padding="10dp" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+</LinearLayout>
+</ScrollView>
