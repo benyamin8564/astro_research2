@@ -26,7 +26,7 @@ object AstroCalculator {
             else->El(0.0,0.0,0.0,1.0,0.0,0.0)
         }
         val N=toRad(e.N); val i=toRad(e.i); val w=toRad(e.w); val a=e.a; val ecc=e.e; val M=toRad(norm(e.M + when(name){
-            "Mercury"->4.0923344368*d; "Venus"->1.6021302244*d; "Earth"->.9856002585*d; "Mars"->.5240207766*d; "Jupiter"->.0830853001*d; "Saturn"->.0334442282*d; "Uranus"->.011725806*d; "Neptune"->.005995147*d; else->0.0 })))
+            "Mercury"->4.0923344368*d; "Venus"->1.6021302244*d; "Earth"->.9856002585*d; "Mars"->.5240207766*d; "Jupiter"->.0830853001*d; "Saturn"->.0334442282*d; "Uranus"->.011725806*d; "Neptune"->.005995147*d; else->0.0 }))
         val E=kepler(toDeg(M),ecc); val xv=a*(cos(E)-ecc); val yv=a*sqrt(1-ecc*ecc)*sin(E); val v=atan2(yv,xv); val r=hypot(xv,yv)
         val xh=r*(cos(N)*cos(v+w)-sin(N)*sin(v+w)*cos(i)); val yh=r*(sin(N)*cos(v+w)+cos(N)*sin(v+w)*cos(i)); val zh=r*(sin(v+w)*sin(i))
         return doubleArrayOf(xh,yh,zh)
